@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="style.css">
+	<title>Bike for Brussels: Réservation de vélo dans la capitale</title>
+
+	<script src="https://kit.fontawesome.com/e5e1e3260a.js" crossorigin="anonymous"></script>
+	<!-- Ajout du script leaflet -->
+	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+	<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+	<!-- Ajout de google fonts  -->
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Varela&display=swap" rel="stylesheet">
+</head>
+<body>
+	<!-- Slider -->
+	<div class="carousel">
+		<div class="carousel_item carousel_item--visible">
+			<div class="carousel_texte">Visitez la ville de Bruxelles à vélo</div>
+			<img src="images/slider_01.jpg" alt="">
+		</div>
+		<div class="carousel_item">
+			<div class="carousel_texte item2">Sélectionnez votre station et reservez votre vélo</div>
+			<img src="images/slider_02.jpg" alt="">
+		</div>
+		<div class="carousel_item">
+			<div class="carousel_texte item3">Signez et tout est prêt!</div>
+			<img src="images/slider_03.jpg" alt="">
+		</div>
+
+	<!-- Boutons -->
+		<div class="carousel_actions">
+			<button id="carousel_button--prev" aria-label="Previous slide"><i class="fas fa-angle-left fa-2x"></i></button>
+			<button id="carousel_button--next" aria-label="Next slide"><i class="fas fa-angle-right fa-2x"></i></button>
+		</div>
+
+		<div class="carousel_pause">
+			<div id="carousel_button--pause" aria-label="Pause" ><i class="far fa-pause-circle"></i></div>
+		</div>
+		
+	</div>
+
+	<!-- CARTE MAP LEAFLET-->
+	<div id="map_container">
+		<div id="map"></div>
+
+		<div id="laptpsize">
+
+		<div id="steps">
+
+			<div class="step_infos">
+				<table>
+					<caption>Cliquez sur la station de votre choix et réservez votre vélo.</caption>
+					<tr id="formulaire_name--hidden">
+						<th>Nom:</th>
+						<td id="name"></td>
+					</tr>
+					<tr>
+						<th id="formulaire_address">Adresse:</th>
+						<td id="address"></td>
+					</tr>
+					<tr>
+						<th>Status:</th>
+						<td id="status"></td>
+					</tr>
+					<tr>
+						<th>Vélos disponibles: </th>
+						<td id="free_bikes"></td>
+					</tr>
+					<tr>
+						<th>Places disponibles: </th>
+						<td id="stands"></td>
+					</tr>
+				</table>
+
+				<div id="bookedMsg"> Vous avez déjà une réservation en cours.</div>
+					<div id="bookingicn"><button id="booking_btn">	
+							<span>Réserver</span>
+							<div id="icnreserv">
+								<i class="fas fa-bicycle"></i>
+							</div>
+						</button>
+					</div>
+			</div>
+		</div>
+
+		<div id="step_booking">
+			<h2>Votre réservation</h2>
+			<div id="canvasArea">
+				<form id="booking_form">
+					<div id="inputs">
+						<label for="surname">Votre nom</label>
+						<br>
+						<input type="text" id="surname" name="surname" placeholder="Veuillez indiquer votre nom" maxlength="50">
+						<br>
+						<label for="firstname">Votre prénom</label>
+						<br>
+						<input type="text" id="firstname" name="firstname" placeholder="Veuillez indiquer votre prénom" maxlength="50">
+						<span id="inputMsg"></span>
+					</div>
+					<div id="sign">
+						<h3>Votre signature</h3>
+						<canvas id="canvas" width="150" height="150"></canvas>
+						<button id="confirm_btn">Confirmer</button>
+						<button id="clear_btn">Effacer</button>
+					</div>
+				</form>
+			</div>
+		</div>
+
+	</div> <!-- fin div pour laptop-->
+
+	</div>
+
+
+	<div id="step_timer" style="">
+
+            <p>Vélo réservé à la station <strong><span id="booked_station"></span></strong> par <strong><span id="booked_name"></span></strong></p>
+            <p id="booked_timer">
+                <strong>Temps restant : </strong>
+                <span id="countdown"></span>
+            </p>
+
+    </div>
+	
+
+	<!--SCRIPT-->
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+	<script src="js/carousel.js"></script>
+	<script src="js/map.js"></script>
+	<script src="js/canvas.js"></script>
+	<script src="js/booking.js"></script>
+</body>
+</html>

@@ -1,0 +1,374 @@
+body {
+	margin: 0;
+	font-family: 'Varela', sans-serif;
+}
+
+/*************************** Carousel ******************************/
+.carousel .carousel_item  img {
+	 width: 100%;
+  	height: 500px;
+  object-fit: cover;
+  object-position: 80%;
+}
+
+
+.carousel {
+	max-width: 1920px;
+	height: 500px;
+	position: relative;
+	overflow: hidden;
+    
+}
+
+
+.carousel .carousel_item,
+.carousel .carousel_item--hidden {
+	display: none;
+}
+
+.carousel .carousel_item--visible {
+	display: block;
+}
+
+/********************* Boutons *************************************/
+.carousel .carousel_actions {
+	display: flex;
+	width: 100%;
+	justify-content: space-between;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%); /* permet de centrer  a 100%*/
+}
+
+.carousel .carousel_actions button {
+	border-radius: 50px;
+	border: 0;
+	font-weight: bold;
+	cursor: pointer;
+	width: 40px;
+	height: 40px;
+	background-color: rgba(255, 255, 255, .4);
+
+}
+.fa-angle-left, .fa-angle-right {
+	color: white;
+	opacity: none;
+}
+
+.carousel .carousel_actions button#carousel_button--prev {
+	margin-left: 20px;
+}
+
+.carousel .carousel_actions button#carousel_button--next {
+	margin-right: 20px;
+}
+
+.carousel .carousel_pause {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right:0;
+	display: flex;
+	justify-content: center;
+	padding: 0;
+	margin-right: 30%;
+	margin-left: 30%;
+	margin-bottom:3%;
+}
+
+.fa-pause-circle, .fa-play-circle {
+	color: rgba(255, 255, 255, .7);
+	cursor: pointer;
+
+
+
+}
+#carousel_button--pause {
+		font-family: "Font Awesome 5 Free";
+		
+		font-weight: 900;
+		font-size: 40px;
+
+}
+
+/************************** Texte carousel**************************/
+.carousel_texte {
+	margin-top: 30px;
+	margin: 8px;
+	color: white;
+	position: absolute;
+	font-size: 50px;
+	text-align: center;
+	font-weight: bold;
+
+}
+.item3 {
+	bottom: 13%;
+}
+
+
+/************************** Map **************************/
+
+#map_container {
+	position: relative;
+	width: 100%;
+	margin: 0px;
+	display: flex;
+	margin: 0;
+	padding-top: 1%;
+	background-color: #252b2b;
+	flex-direction: column;
+
+}
+
+#map {
+	top:0;
+	left: 0;
+	 /** 60% web **/ 
+	height: 500px;
+	margin: 2%;
+ /** margin left 1% web */
+	border-radius: 25px;
+}
+
+
+
+
+/***************************Formulaire*************************************/
+#formulaire_name--hidden { display: none; }
+#map_formulaire--tableau {
+	margin: 0;
+	width: 100%;
+}
+
+#step_booking {
+	display: none;
+}
+
+.step_infos {
+	margin: 2%;
+	border-radius: 25px;
+	background-color: #009843;
+
+}
+.step_infos caption {
+	display: none; /**mobile version disable**/
+	width: 60%;
+	margin: auto;
+	color: white;
+	font-weight: bold;
+	font-size: 20px;
+}
+
+.step_infos table {
+	padding-top: 5%;
+	padding-left: 1%;
+	text-align: left;
+}
+.step_infos tr {
+	color: white;
+}
+.step_infos th {
+
+	margin: 10px;
+	padding: 10px;
+}
+#bookedMsg {
+	color: #8b1717;
+	font-weight: bold;
+	font-size: 17px;
+	padding: 10px;
+}
+
+#booking_btn {
+
+	padding:12px 16px;
+	border-radius: 5px;
+	font-size: 14px;
+	cursor: pointer;
+	background-color: #ec8f6a;
+	border-color: #ec8f6a;
+	text-align: center;
+	display: flex;
+	margin: auto;
+	position: relative;
+	width: 220px;
+}
+#booking_btn span {
+	color: white;
+	font-weight: bold;
+	margin: auto;
+
+}
+
+#bookingicn {
+	padding-bottom: 2%;
+
+}
+
+#icnreserv {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 45px;
+	bottom: 1px;
+	background-color: white;
+	border-radius:2px;
+	display: flex;
+}
+
+.fa-bicycle {
+	color: #ec8f6a;
+	margin: auto;
+	font-size: 20px;
+}
+
+/************************************STEPBOOKING***********************/
+
+#step_booking {
+	width: 90%;
+	margin: auto;
+	background: white;
+	border-radius: 15px;
+}
+#step_booking h2, h3, #inputs {
+	padding-left: 5%;
+}
+
+#booking_form input {
+	background: #ebedee;
+	border: none;
+	padding: 7px;
+	margin: 10px 0px;
+	box-shadow: 0px 0px 3px rgba(235,237,238,.75);
+}
+#booking_form input:focus {
+	outline: none;
+}
+
+#sign {
+	background: #808787;
+	border-radius: 15px;
+
+}
+
+#sign h3 {
+	
+	padding-top: 15px;
+}
+
+#sign #canvas {
+	background: #ebedee;
+	margin-left: 20%;
+}
+
+#confirm_btn, #clear_btn {
+	margin: 10px 20px;
+	background-color: #ec8f6a;
+	padding:12px 20px;
+	border-radius: 5px;
+	font-size: 14px;
+	cursor: pointer;
+	font-weight: bold;
+	color: white;
+	border-color: #ec8f6a;
+}
+
+#step_timer {
+	background-color: #30bd6e;
+	padding-top: 15px;
+	padding-bottom: 15px;
+
+}
+#step_timer p {
+	margin: 10px;
+	padding-bottom: 10px;
+	color: white;
+}
+
+#booked_timer {
+	padding-bottom: 10px;
+}
+/******************************************************** 
+Tablet & Laptop etc above 
+*********************************************************/ 
+@media only screen and (min-width: 700px) {
+ .carousel_texte {
+    display: block;
+ 	top: 100px;
+ 	right: 0;
+ 	left: 20px;
+ 	margin: 0;
+ 
+ }
+#booking_form {
+	display: flex;
+}
+
+#inputs {
+	width: 60%;
+}
+#sign {
+width: 60%;
+}
+
+#sign button {
+	margin: 10px 25px;
+	padding:12px 25px;
+}
+
+
+} /*fin media min 700*/
+
+@media only screen and (min-width: 940px) { 
+
+#map_container {
+	flex-direction: row;
+	height: 100%;
+}
+
+#map {
+	border-radius: 0px;
+	width: 60%;
+	height: 800px;
+
+	margin: 1%;
+}
+
+.step_infos {
+	height: 400px;
+
+}
+.step_infos, #step_booking, #sign {
+	border-radius: 0px;
+}
+
+#step_booking {
+	margin-left :2%;
+	margin-right: 0px;
+	width: 95%;
+}
+
+
+#laptpsize {
+	display: flex;
+	flex-direction: column;
+	width: 40%;
+}
+
+#sign button {
+	margin-top: 5%;
+	margin: auto;
+	padding:12px 15px;
+	display: block;
+}
+
+#sign #canvas {
+	display: block;
+	margin:auto;
+
+}
+
+
+
+}
